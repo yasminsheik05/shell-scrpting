@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SOURCE common.sh
+SOURCE components/common.sh
 
 INFO "[\e[1;33msetup frontend component\e[0m]"
 INFO  "[\e[1;33mInstalling Nginx\e[0m]"

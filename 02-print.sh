@@ -16,3 +16,4 @@ echo -e "\e[36mCyan"
 
 echo -e "\e[41;33mYELLOW on RED"
 echo -e "\e[41;33mYELLOW on RED\e[0m"
+echo -e "\e[33mYELLOW normal ,\e[1;33mBOLD YELLOW \e[0m"

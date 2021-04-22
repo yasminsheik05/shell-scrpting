@@ -10,5 +10,5 @@ SAMPLE1() {
 }
 b=20
 SAMPLE
-SAMPLE2
+SAMPLE1
 echo A=$a

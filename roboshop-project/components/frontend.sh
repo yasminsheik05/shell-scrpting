@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SOURCE components/common.sh
+. components/common.sh
 
 INFO "frontend component"
 INFO "Installing Nginx"

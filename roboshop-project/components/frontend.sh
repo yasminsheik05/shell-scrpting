@@ -6,4 +6,4 @@ COMPONENT=frontend
 
 INFO "frontend component"
 INFO "Installing Nginx"
-yum install nginx -y
+yum install nginx -y &>>$LOG_FILE

@@ -8,6 +8,10 @@ SUCC() {
 FAIL() {
   echo -e "[\e[1;31mFAIL \e[0m] [\e[1;35m${COMPONENT}\e[0m] [\e[1;36m$(date '+%F %T')\e[0m] $1"
 }
+
+LOG_FILE=/tmp/roboshop.log
+rm -f $LOG_FILE
+
 USER_ID=$(ID-U)
 case $USER_ID in
      0)

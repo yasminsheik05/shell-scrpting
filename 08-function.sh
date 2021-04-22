@@ -9,7 +9,6 @@ SAMPLE1() {
      echo Hello from SAMPLE1 function
 
 }
-
 b=20
 SAMPLE
 SAMPLE2

@@ -1,3 +1,5 @@
 #!/bin/bash
 
-echo Installing mongo
+. components/common.sh
+
+INFO "Mongo component"

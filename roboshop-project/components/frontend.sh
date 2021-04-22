@@ -6,5 +6,4 @@ COMPONENT=frontend
 
 INFO "frontend component"
 INFO "Installing Nginx"
-SUCC "Installed Nginx"
-FAIL "Installed Nginx"
+yum install nginx -y

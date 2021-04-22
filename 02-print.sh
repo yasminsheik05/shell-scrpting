@@ -3,7 +3,7 @@
 
 echo Hello world
 echo gud afternoon!
-echo -e "Hello, \n\ngud aftrenoon to session \n Regards, \nYasmin"
+echo -e "Hello, \n\n gud afternoon to session \n Regards, \nYasmin"
 
 
 

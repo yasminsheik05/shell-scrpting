@@ -15,3 +15,4 @@ echo -e "\e[35mMagenta text"
 echo -e "\e[36mCyan"
 
 echo -e "\e[41;33mYELLOW on RED"
+echo -e "\e[41;33mYELLOW on RED\e[0m"

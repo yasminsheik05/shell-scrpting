@@ -1,6 +1,7 @@
 #!/bin/bash
-
-frontend:
+common:
+	@sh components/common.sh
+frontend: common
 	@sh components/frontend.sh
-mongo:
+mongo: common
 	@sh components/mongo.sh

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+COMPONENT=frontend
+
 . components/common.sh
 
 INFO "frontend component"

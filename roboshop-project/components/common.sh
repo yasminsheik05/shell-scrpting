@@ -22,6 +22,7 @@ case $USER_ID in
 
 LOG_FILE=/tmp/roboshop.log
 rm -f $LOG_FILE
+
 STAT() {
   case $1 in
   0)
@@ -32,6 +33,7 @@ STAT() {
     ;;
   esac
 }
+
 DOWNLOAD_ARTIFACT() {
   curl -s -o/tmp/${COMPONENT}.zip $1 &>>LOG_FILE
   STAT $? "Artifact Download"

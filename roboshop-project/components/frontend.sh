@@ -16,7 +16,7 @@ rm -rf /user/share/nginx/html/* &>>$LOG_FILE
 STAT $? "Artifact Removal"
 
 INFO "Extract Artifact Archive"
-cd/user/share/nginx/html
+cd /user/share/nginx/html
 unzip -o /tmp/frontend.zip &>>$LOG_FILE
 mv static/* .
 STAT $? "Artifact Extract"

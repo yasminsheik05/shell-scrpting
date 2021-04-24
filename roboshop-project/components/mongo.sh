@@ -1,6 +1,6 @@
 #!/bin/bash
 
 COMPONENT=Mongo
-SOURCE components/common.sh
+source components/common.sh
 
-INFO "Mongo component"
+INFO "Setup Mongo component"

@@ -1,4 +1,3 @@
-#!/bin/bash
 common:
 	@sh components/common.sh
 frontend: common

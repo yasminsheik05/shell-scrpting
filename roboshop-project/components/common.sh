@@ -1,4 +1,3 @@
-
 INFO() {
   echo -e "[\e[1;33mINFO \e[0m] [\e[1;35m${COMPONENT}\e[0m] [\e[1;36m$(date '+%F %T')\e[0m] $1"
 }
@@ -9,10 +8,10 @@ FAIL() {
   echo -e "[\e[1;31mFAIL \e[0m] [\e[1;35m${COMPONENT}\e[0m] [\e[1;36m$(date '+%F %T')\e[0m] $1"
 }
 
-USER_ID=$(ID-U)
+USER_ID=$(id -u)
 case $USER_ID in
      0)
-       true
+       true ## Nothing to perform
        ;;
      *)
        echo -e "\e[1;31m you should be a root user to perform this script\e[0m"

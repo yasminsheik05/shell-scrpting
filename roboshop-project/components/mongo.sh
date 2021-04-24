@@ -1,6 +1,6 @@
 #!/bin/bash
 
 COMPONENT=Mongo
-. components/common.sh
+SOURCE components/common.sh
 
 INFO "Mongo component"

@@ -32,3 +32,16 @@ npm install --unsafe-perm &>>$LOG_FILE
 STAT $? "NodeJS Dependencies Installation"
 
 chown roboshop:roboshop /home/roboshop/${COMPONENT} -R
+INFO "Configuring Catalogue startup script"
+sed -i -e "s/MONGO_DNSNAME/mongodb-test.ms-word.tk/" /home/roboshop/catalogue/systemd.service
+STAT $? "Startup script Configuration"
+
+INFO "Setup systemD service for catalogue"
+mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
+systemctl daemon-reload
+STAT $? "Catalogue systemD service"
+
+INFO "Starting catalogue service"
+systemctl start catalogue &>>$LOG_FILE
+systemctl enable catalogue &>>$LOG_FILE
+STTAT $? "Ctalogue service start"

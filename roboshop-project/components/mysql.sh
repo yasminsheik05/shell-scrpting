@@ -22,5 +22,3 @@ INFO "Start MySQL Service"
 systemctl enable mysqld &>>LOG_FILE
 systemctl start mysqld &>>LOG_FILE
 STAT $? "MySQL Service Startup"
-
-

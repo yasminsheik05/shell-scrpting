@@ -30,3 +30,5 @@ STAT $? "Artifact extract"
 INFO "Install nodeJS dependencies"
 npm install --unsafe-perm &>>$LOG_FILE
 STAT $? "NodeJS Dependencies Installation"
+
+chown roboshop:roboshop /home/roboshop/${COMPONENT} -R

@@ -6,3 +6,9 @@ mongo: common
 	@sh components/mongo.sh
 catalogue: common
 	@sh components/catalogue.sh
+redis: common
+	@sh components/redis.sh
+user: common
+	@sh components/user.sh
+cart: common
+	@sh components/cart.sh

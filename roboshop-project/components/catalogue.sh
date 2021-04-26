@@ -44,4 +44,4 @@ STAT $? "Catalogue systemD service"
 INFO "Starting catalogue service"
 systemctl start catalogue &>>$LOG_FILE
 systemctl enable catalogue &>>$LOG_FILE
-STAT $? "Ctalogue service start"
+STAT $? "Catalogue service start"

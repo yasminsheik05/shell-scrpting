@@ -3,7 +3,7 @@
 COMPONENT=frontend
 source components/common.sh
 
-INFO "frontend component"
+INFO "Setup frontend component"
 INFO "Installing Nginx"
 yum install nginx -y &>>$LOG_FILE
 

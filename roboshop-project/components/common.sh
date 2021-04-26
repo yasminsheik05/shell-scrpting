@@ -6,6 +6,8 @@ SUCC() {
 }
 FAIL() {
   echo -e "[\e[1;31mFAIL \e[0m] [\e[1;35m${COMPONENT}\e[0m] [\e[1;36m$(date '+%F %T')\e[0m] $1"
+  echo -e "\n Refer Log file : $LOG_FILE for more information"
+  exit 1
 }
 
 USER_ID=$(id -u)

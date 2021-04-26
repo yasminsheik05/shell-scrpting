@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COMPONENT=cuser
+COMPONENT=user
 source components/common.sh
 
 INFO "Setup user component"

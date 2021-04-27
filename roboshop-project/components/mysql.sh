@@ -25,8 +25,9 @@ echo " ALTER USER 'root'@'localhost' IDENTIFIED BY 'P@5sw0rd123';
 uninstall plugin validate_password;
 > ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';" >/tmp/schema.sql
 
-INFO "Reset MySQL Password"
+INFO "My MySQL Password"
 echo show database | mysql -u root -ppassword &>>$LOG_FILE
+INFO "Reset MySQL Password"
 
 case $? in
   0)

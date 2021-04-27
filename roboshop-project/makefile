@@ -14,3 +14,9 @@ cart: common
 	@sh components/cart.sh
 mysql: common
 	@sh components/mysql.sh
+shipping: common
+	@sh components/shipping.sh
+rabbitmq: common
+	@sh components/rabbitmq.sh
+payment: common
+	@sh components/payment.sh

@@ -25,13 +25,14 @@ INFO "Extract Artifacts"
 mkdir -p /home/roboshop/${COMPONENT}
 cd /home/roboshop/${COMPONENT}
 unzip -o /tmp/${COMPONENT}.zip &>>$LOG_FILE
-
 STAT $? "Artifact extract"
+
 INFO "Install nodeJS dependencies"
 npm install --unsafe-perm &>>$LOG_FILE
 STAT $? "NodeJS Dependencies Installation"
 
 chown roboshop:roboshop /home/roboshop/${COMPONENT} -R
+
 INFO "Configuring user startup script"
 sed -i -e "s/MONGO_ENDPOINT/mongodb-test.ms-word.tk/" -e "s/REDIS-ENDPOINT/redis-test.ms-word.tk/" /home/roboshop/${COMPONENT}/systemd.service
 STAT $? "Startup script Configuration"

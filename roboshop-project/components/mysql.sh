@@ -13,12 +13,12 @@ enabled=1
 gpgcheck=0' > /etc/yum.repos.d/mysql.repo
 STAT $? "Setup Repository"
 
-INFO "Install MySQL Service"
-yum remove mariadb-libs -y &>>LOG_FILE
-yum install mysql-community-server -y &>>LOG_FILE
+INFO "Install MySQL Server"
+yum remove mariadb-libs -y &>>$LOG_FILE
+yum install mysql-community-server -y &>>$LOG_FILE
 STAT $? "MySQL Installation"
 
 INFO "Start MySQL Service"
-systemctl enable mysqld &>>LOG_FILE
-systemctl start mysqld &>>LOG_FILE
+systemctl enable mysqld &>>$LOG_FILE
+systemctl start mysqld &>>$LOG_FILE
 STAT $? "MySQL Service Startup"

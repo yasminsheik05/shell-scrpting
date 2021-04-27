@@ -2,7 +2,7 @@
 
 COMPONENT=mysql
 
-source /components/common.sh
+source components/common.sh
 INFO "Setup MySQL YUM Repositories"
 echo '[mysql57-community]
 name=MySQL 5.7 Community Server

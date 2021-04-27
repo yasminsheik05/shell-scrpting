@@ -27,4 +27,4 @@ uninstall plugin validate_password;
 
 MYSQL_DEFAULT_PASSWORD=${grep 'A temporary password ' /var/log/mysqld.log | awk '{print $NF}'}
 
- mysql -u root -p{MYSQL_DEFAULT_PASSWORD} < /tmp/schema.sql
+mysql -u root -p${MYSQL_DEFAULT_PASSWORD} < /tmp/schema.sql

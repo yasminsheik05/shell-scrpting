@@ -25,7 +25,7 @@ INFO "Download Payment Artifact"
 DOWNLOAD_ARTIFACT "https://dev.azure.com/DevOps-Batches/f635c088-1047-40e8-8c29-2e3b05a38010/_apis/git/repositories/cd32a975-ee45-4b3b-a08e-8e97c3ca7733/items?path=%2F&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=master&resolveLfs=true&%24format=zip&api-version=5.0&download=true"
 
 INFO "Extract Download Artifacts"
-mkdir -P cd /home/roboshop/${COMPONENT}
+mkdir -p cd /home/roboshop/${COMPONENT}
 cd/home/roboshop/${COMPONENT}
 unzip -o /tmp/payment.zip &>>LOG_FILE
 STAT $? "Artifacts Extracts"
@@ -38,9 +38,10 @@ STAT $? "Dependencies Install"
 
 
 INFO "Configuring Payment startup script"
+
+sed -i -e "s/CARTHOST/cart-test.ms-word.tk/" \ -e "s/USERHOST/user-test.ms-word.tk/" \ -e "s/AMQPHOST/rabbitmq-test.ms-word.tk/" \ /home/roboshop/catalogue/systemd.service
 USER_UID=${id -u centos}
 USER_GID=${id -g centos}
-sed -i -e "s/CARTHOST/cart-test.ms-word.tk/" \ -e "s/USERHOST/user-test.ms-word.tk/" \ -e "s/AMQPHOST/rabbitmq-test.ms-word.tk/" \ /home/roboshop/catalogue/systemd.service
 sed -i -e "/uid =/ c uid = ${USER_UID}" \
        -e "/gid =/ c gid = ${USER_GID}" \
        /home/roboshop/${COMPONENT}/payment.ini

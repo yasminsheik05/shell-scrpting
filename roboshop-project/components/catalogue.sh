@@ -32,6 +32,7 @@ npm install --unsafe-perm &>>$LOG_FILE
 STAT $? "NodeJS Dependencies Installation"
 
 chown roboshop:roboshop /home/roboshop/${COMPONENT} -R
+
 INFO "Configuring Catalogue startup script"
 sed -i -e "s/MONGO_DNSNAME/mongodb-test.ms-word.tk/" /home/roboshop/catalogue/systemd.service
 STAT $? "Startup script Configuration"

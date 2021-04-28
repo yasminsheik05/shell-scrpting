@@ -22,18 +22,18 @@ case $? in
 esac
 
 INFO "Download Payment Artifact"
-DOWNLOADD_ARTIFACT "https://dev.azure.com/DevOps-Batches/f635c088-1047-40e8-8c29-2e3b05a38010/_apis/git/repositories/cd32a975-ee45-4b3b-a08e-8e97c3ca7733/items?path=%2F&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=master&resolveLfs=true&%24format=zip&api-version=5.0&download=true"
+DOWNLOAD_ARTIFACT "https://dev.azure.com/DevOps-Batches/f635c088-1047-40e8-8c29-2e3b05a38010/_apis/git/repositories/cd32a975-ee45-4b3b-a08e-8e97c3ca7733/items?path=%2F&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=master&resolveLfs=true&%24format=zip&api-version=5.0&download=true"
 
 INFO "Extract Download Artifacts"
 mkdir -P cd /home/roboshop/${COMPONENT}
-cd /home/roboshop/${COMPONENT}
+cd/home/roboshop/${COMPONENT}
 unzip -O /tmp/payment.zip &>>LOG_FILE
 STAT $? "Artifacts Extracts"
 
 chown robosho:roboshop /home/roboshop/${COMPONENT} -R &>>$LOG_FILE
 
 INFO "Install Paython Dependencies"
-pip3 install -r requirements.txt
+pip3 install -r requirements.txt &>>$LOG_FILE
 STAT $? "Dependencies Install"
 
 

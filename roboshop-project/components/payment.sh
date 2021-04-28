@@ -39,7 +39,7 @@ STAT $? "Dependencies Install"
 
 INFO "Configuring Payment startup script"
 
-sed -i -e "s/CARTHOST/cart-test.ms-word.tk/" \ -e "s/USERHOST/user-test.ms-word.tk/" \ -e "s/AMQPHOST/rabbitmq-test.ms-word.tk/" \ /home/roboshop/catalogue/systemd.service
+sed -i -e "s/CARTHOST/cart-test.ms-word.tk/" \ -e "s/USERHOST/user-test.ms-word.tk/" \ -e "s/AMQPHOST/rabbitmq-test.ms-word.tk/" \ /home/roboshop/${COMPONENT}/systemd.service
 USER_UID=${id -u centos}
 USER_GID=${id -g centos}
 sed -i -e "/uid =/ c uid = ${USER_UID}" \

@@ -16,6 +16,7 @@ INFO "Install Erlang"
      STAT $? "Erlang Installation"
    ;;
  esac
+
 INFO "Setup RabbitMQ Installation"
 curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash &>>$LOG_FILE
 STAT $? "RabbitMQ Yum Repos Setup"

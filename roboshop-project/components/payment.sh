@@ -27,7 +27,7 @@ DOWNLOAD_ARTIFACT "https://dev.azure.com/DevOps-Batches/f635c088-1047-40e8-8c29-
 INFO "Extract Download Artifacts"
 mkdir -P cd /home/roboshop/${COMPONENT}
 cd/home/roboshop/${COMPONENT}
-unzip -O /tmp/payment.zip &>>LOG_FILE
+unzip -o /tmp/payment.zip &>>LOG_FILE
 STAT $? "Artifacts Extracts"
 
 chown robosho:roboshop /home/roboshop/${COMPONENT} -R &>>$LOG_FILE
@@ -43,6 +43,7 @@ USER_GID=${id -g centos}
 sed -i -e "s/CARTHOST/cart-test.ms-word.tk/" \ -e "s/USERHOST/user-test.ms-word.tk/" \ -e "s/AMQPHOST/rabbitmq-test.ms-word.tk/" \ /home/roboshop/catalogue/systemd.service
 sed -i -e "/uid =/ c uid = ${USER_UID}" \
        -e "/gid =/ c gid = ${USER_GID}" \
+       /home/roboshop/${COMPONENT}/payment.ini
 STAT $? "Startup script Configuration"
 
 INFO "Setup systemD service for Payment"

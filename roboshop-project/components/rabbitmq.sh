@@ -9,7 +9,7 @@ INFO "Install Erlang"
  yum list esl-erlang &>>$LOG_FILE
  case $1 in
    0)
-     STAT $? "Erlang Installation"
+     STAT "Erlang Installation"
    ;;
    1)
      yum install https://packages.erlang-solutions.com/erlang/rpm/centos/7/x86_64/esl-erlang_22.2.1-1~centos~7_amd64.rpm -y &>>$LOG_FILE

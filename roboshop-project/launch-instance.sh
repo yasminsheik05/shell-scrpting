@@ -10,3 +10,4 @@ case $1 in
       echo updating routes
     ;;
   esac
+done

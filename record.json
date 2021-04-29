@@ -1,9 +1,9 @@
 {
   "Comment" : "CREATE/DELETE/UPSERT a record " ,
   "Changes" : [{
-    "Action" : "CREATE",
+    "Action" : "UPSERT",
     "Resource Recordset" : {
-       "Name" : "COMPONENT.test" ,
+       "Name" : "COMPONENT.test.ms-word.tk" ,
         "Type" : "A",
          "TTL" : 300 ,
          "ResourceRecords" : [{"Value": IPADDRESS}]

@@ -3,7 +3,7 @@
   "Changes" : [{
     "Action" : "CREATE",
     "Resource Recordset" : {
-       "Name" : "ms-word.tk" ,
+       "Name" : "COMPONENT.test" ,
         "Type" : "A",
          "TTL" : 300 ,
          "ResourceRecords" : [{"Value": IPADDRESS}]

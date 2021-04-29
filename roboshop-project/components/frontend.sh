@@ -26,6 +26,8 @@ STAT $? "Artifact Extract"
 
 INFO "Update Nginx Configuration"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
+sed -i -e "catalogue/ s/localhost/catalogue-test.ms-word.tk/ "
+             /etc/nginx/default.d/roboshop.conf
 STAT $? "Nginx Configuration update"
 
 INFO "Start Nginx Service"

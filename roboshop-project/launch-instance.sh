@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 case $1 in
   launch)
     for component in frontend catalogue cart user shipping payment mysql mongo rabbitmq redis; do
@@ -11,8 +12,7 @@ case $1 in
       echo updating routes
        for component in frontend catalogue cart user shipping payment mysql mongo rabbitmq redis; do
       IP=$(aws ec2 describe-instances --filters Name=tag:Name,Values=${component} Name=instance-state-name,Values=running | jq  '.Reservations[].Instances[].PrivateIpAddress')
-      echo $component $IP
+      sed -e "s/IPADDRESS/${IP}/" record.json
       done
     ;;
   esac
-done

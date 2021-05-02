@@ -34,7 +34,7 @@ STAT $? "NodeJS Dependencies Installation"
 chown roboshop:roboshop /home/roboshop/${COMPONENT} -R
 
 INFO "Configuring user startup script"
-sed -i -e "s/MONGO_ENDPOINT/mongodb-test.ms-word.tk/" -e "s/REDIS-ENDPOINT/redis-test.ms-word.tk/" /home/roboshop/${COMPONENT}/systemd.service
+sed -i -e "s/MONGO_ENDPOINT/mongo-test.ms-word.tk/" -e "s/REDIS-ENDPOINT/redis-test.ms-word.tk/" /home/roboshop/${COMPONENT}/systemd.service
 STAT $? "Startup script Configuration"
 
 INFO "Setup systemD service for user"
@@ -43,6 +43,6 @@ systemctl daemon-reload
 STAT $? "user systemD service"
 
 INFO "Starting user service"
-systemctl start ${COMPONENT} &>>$LOG_FILE
 systemctl enable ${COMPONENT} &>>$LOG_FILE
+systemctl restart ${COMPONENT} &>>$LOG_FILE
 STAT $? "user service start"

@@ -18,8 +18,12 @@ yum install -y mongodb-org &>>$LOG_FILE
 STAT $? "MongoDB Install"
 
 INFO "Update MongoDB Configuration"
-sed -i 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
-STAT $? "MongoDB Configuration Update"
+if [ -f /etc/mongod.conf ]; then
+  sed -i 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
+  STAT $? "MongoDB Configuration Update"
+else
+  STAT 1 "Mongo Config File Missing"
+fi
 
 INFO "Restart MongoDb"
 systemctl enable mongod $LOG_FILE

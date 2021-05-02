@@ -27,7 +27,7 @@ STAT $? "RabbitMQ Server Install"
 
 INFO "Start RabbitMQ Server"
 systemctl enable rabbitmq-server &>>$LOG_FILE
-systemctl start rabbitmq-server &>>$LOG_FILE
+systemctl restart rabbitmq-server &>>$LOG_FILE
 STAT $? "Start RabbitMQ Service"
 
 INFO "Create Roboshop App User In RabbitMQ"

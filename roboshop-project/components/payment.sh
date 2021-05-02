@@ -53,6 +53,6 @@ systemctl daemon-reload
 STAT $? "Payment systemD service"
 
 INFO "Starting Payment service"
-systemctl start ${COMPONENT} &>>$LOG_FILE
 systemctl enable ${COMPONENT} &>>$LOG_FILE
+systemctl restart ${COMPONENT} &>>$LOG_FILE
 STAT $? "Payment service start"

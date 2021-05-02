@@ -46,6 +46,6 @@ STAT $? "Shipping systemD service"
 
 
 INFO "Starting Shipping service"
-systemctl start ${COMPONENT} &>>$LOG_FILE
 systemctl enable ${COMPONENT} &>>$LOG_FILE
+systemctl restart ${COMPONENT} &>>$LOG_FILE
 STAT $? "Shipping service start"
